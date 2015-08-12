@@ -1093,7 +1093,7 @@ var PACMAN = (function () {
 
         loaded();
 
-        log.innerHTML = 'loaded..';
+        log.innerHTML = 'loaded.. timer' + timer;
     }
 
 
@@ -1111,7 +1111,7 @@ var PACMAN = (function () {
 
         dialog('Press Play to Start');
 
-        window.focus(document.body);
+        document.body.focus();
 
         document.body.addEventListener('keydown', keyDown, true);
         document.body.addEventListener('keypress', keyPress, true);
