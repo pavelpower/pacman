@@ -48,6 +48,17 @@
     var el = document.getElementById("pacman");
 
     PACMAN.init(el, rootAdio);
+    if (Modernizr.canvas) {
+
+      window.setTimeout(function () {
+        var rootAdio =  Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3) ? "./" : null;
+        PACMAN.init(el, rootAdio);
+      }, 0);
+
+    } else {
+      el.innerHTML = "Sorry, needs a decent browser<br /><small>" +
+        "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+    }
   </script>
 
 </body>
