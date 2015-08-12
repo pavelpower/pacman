@@ -843,7 +843,7 @@ var PACMAN = (function () {
     }
 
     function keyDown(e) {
-        if (e.keyCode === KEY.OK) {
+        if (e.keyCode === KEY.PLAY) {
             startNewGame();
         } else if (e.keyCode === KEY.S) {
             audio.disableSound();
@@ -1097,7 +1097,7 @@ var PACMAN = (function () {
         
     function loaded() {
 
-        dialog('Press N to Start');
+        dialog('Press Play to Start');
         
         document.addEventListener('keydown', keyDown, true);
         document.addEventListener('keypress', keyPress, true); 
@@ -1156,65 +1156,16 @@ var KEY = {
     'LEFT_SQUARE_BRACKET': 219,
     'REVERSE_SOLIDUS': 220,
     'RIGHT_SQUARE_BRACKET': 221,
-    'APOSTROPHE': 222,
-
-    // DUNE-HD
-    'PAUSE': 111,
-    'PLAY': 105,
-    'ARROW_LEFT': 97,
-    'ARROW_RIGHT': 100,
-    'ARROW_UP':119,
-    'ARROW_DOWN': 115
+    'APOSTROPHE': 222
 };
-//
-//keys = {
-//    9: 'POWER',
-//    119: 'UP', // W
-//    115: 'DOWN', // S
-//    33: 'PAGE_UP',
-//    34: 'PAGE_DOWN',
-//    97: 'LEFT', // A
-//    100: 'RIGHT', // D
-//
-//    13: 'ENTER',
-//    109: 'MENU', // M
-//    46: 'DELETE', // >
-//
-//    48: '0',
-//    49: '1',
-//    50: '2',
-//    51: '3',
-//    52: '4',
-//    53: '5',
-//    54: '6',
-//    55: '7',
-//    56: '8',
-//    57: '9',
-//    93: 'CHANNEL_PLUS', // ]
-//    91: 'CHANNEL_MINUS', // [
-//
-//    43: 'VOLUME_PLUS',
-//    45: 'VOLUME_MINUS',
-//    107: 'MUTE', // K
-//
-//    106: 'INFO', // J
-//
-//    27: 'REBOOT',
-//    36: 'HOME', // HOME
-//
-//    117: 'REWIND', // U
-//    105: 'PLAY', // I
-//    111: 'PAUSE', // O
-//    112: 'FORWARD', // P
-//    121: 'STOP', // Y
-//
-//    122: 'RED', // Z
-//    120: 'GREEN', // X
-//    99: 'YELLOW', // C
-//    118: 'BLUE', // V
-//
-//    101: 'EPG' // E
-//};
+
+KEY.PUSE = 111;
+KEY.PLAY = 105;
+
+KEY.ARROW_UP = 119;
+KEY.ARROW_DOWN = 115;
+KEY.ARROW_LEFT = 97;
+KEY.ARROW_RIGHT = 100;
 
 (function () {
 	/* 0 - 9 */
