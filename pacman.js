@@ -1084,16 +1084,16 @@ var PACMAN = (function () {
         loaded();
     }
 
-    //
-    //function load(arr, callback) {
-    //
-    //    if (arr.length === 0) {
-    //        callback();
-    //    } else {
-    //        var x = arr.pop();
-    //        audio.load(x[0], x[1], function() { load(arr, callback); });
-    //    }
-    //};
+
+    function load(arr, callback) {
+
+        if (arr.length === 0) {
+            callback();
+        } else {
+            var x = arr.pop();
+            audio.load(x[0], x[1], function() { load(arr, callback); });
+        }
+    }
         
     function loaded() {
 
