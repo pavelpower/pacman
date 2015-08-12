@@ -1098,10 +1098,12 @@ var PACMAN = (function () {
     function loaded() {
 
         dialog('Press Play to Start');
-        
-        document.addEventListener('keydown', keyDown, true);
-        document.addEventListener('keypress', keyPress, true); 
-        
+
+        window.focus(document.body);
+
+        document.body.addEventListener('keydown', keyDown, true);
+        document.body.addEventListener('keypress', keyPress, true);
+
         timer = window.setInterval(mainLoop, 1000 / Pacman.FPS);
     }
     
