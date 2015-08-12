@@ -1,3 +1,18 @@
+Object.prototype.clone = function () {
+    var i, newObj = (this instanceof Array) ? [] : {};
+    for (i in this) {
+        if (i === 'clone') {
+            continue;
+        }
+        if (this[i] && typeof this[i] === 'object') {
+            newObj[i] = this[i].clone();
+        } else {
+            newObj[i] = this[i];
+        }
+    }
+    return newObj;
+};
+
 /*jslint browser: true, undef: true, eqeqeq: true, nomen: true, white: true */
 /*global window: false, document: false */
 
@@ -1011,6 +1026,8 @@ var PACMAN = (function () {
         } 
 
         drawFooter();
+
+        nextLoop();
     }
 
     function eatenPill() {
@@ -1106,6 +1123,11 @@ var PACMAN = (function () {
             audio.load(x[0], x[1], function() { load(arr, callback); });
         }
     }
+
+    function nextLoop () {
+        window.clearTimeout(timer);
+        timer = window.setTimeout(mainLoop, 1000 / Pacman.FPS);
+    }
         
     function loaded() {
 
@@ -1116,7 +1138,7 @@ var PACMAN = (function () {
         document.body.addEventListener('keydown', keyDown, true);
         document.body.addEventListener('keypress', keyPress, true);
 
-        timer = window.setInterval(mainLoop, 1000 / Pacman.FPS);
+        nextLoop();
     }
     
     return {
@@ -1336,17 +1358,3 @@ Pacman.WALLS = [
      {'line': [10.5, 9.5]}]
 ];
 
-Object.prototype.clone = function () {
-    var i, newObj = (this instanceof Array) ? [] : {};
-    for (i in this) {
-        if (i === 'clone') {
-            continue;
-        }
-        if (this[i] && typeof this[i] === 'object') {
-            newObj[i] = this[i].clone();
-        } else {
-            newObj[i] = this[i];
-        }
-    }
-    return newObj;
-};
