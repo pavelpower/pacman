@@ -820,7 +820,7 @@ var PACMAN = (function () {
     }
 
     function soundDisabled() {
-        return localStorage['soundDisabled'] === 'true';
+        return true;// (localStorage || sessionStorage)['soundDisabled'] === 'true';
     }
     
     function startLevel() {        
@@ -847,7 +847,7 @@ var PACMAN = (function () {
             startNewGame();
         } else if (e.keyCode === KEY.S) {
             audio.disableSound();
-            localStorage['soundDisabled'] = !soundDisabled();
+            //(localStorage || sessionStorage)['soundDisabled'] = !soundDisabled();
         } else if ((e.keyCode === KEY.PAUSE || e.keyCode === KEY.PLAY) && state === PAUSE) {
             audio.resume();
             map.draw(ctx);
