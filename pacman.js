@@ -1070,12 +1070,12 @@ var PACMAN = (function () {
             var extension = Modernizr.audio.ogg ? 'ogg' : 'mp3';
 
             var audio_files = [
-                ['start', root + 'audio/opening_song.' + extension],
-                ['die', root + 'audio/die.' + extension],
-                ['eatghost', root + 'audio/eatghost.' + extension],
-                ['eatpill', root + 'audio/eatpill.' + extension],
-                ['eating', root + 'audio/eating.short.' + extension],
-                ['eating2', root + 'audio/eating.short.' + extension]
+                ['start', rootAudio + 'audio/opening_song.' + extension],
+                ['die', rootAudio + 'audio/die.' + extension],
+                ['eatghost', rootAudio + 'audio/eatghost.' + extension],
+                ['eatpill', rootAudio + 'audio/eatpill.' + extension],
+                ['eating', rootAudio + 'audio/eating.short.' + extension],
+                ['eating2', rootAudio + 'audio/eating.short.' + extension]
             ];
 
             load(audio_files, function() { loaded(); });
