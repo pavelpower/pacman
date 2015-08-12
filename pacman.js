@@ -1060,11 +1060,21 @@ var PACMAN = (function () {
             ghost = new Pacman.Ghost({'getTick':getTick}, map, ghostSpecs[i]);
             ghosts.push(ghost);
         }
+
+        var log = document.createElement('div');
+
+        log.innerHTML = 'Draw map..';
+
+        document.body.appendChild(log);
         
         map.draw(ctx);
+
+
+        log.innerHTML = 'Done Draw map..';
+
         dialog('Loading ...');
 
-        if (rootAudio) {
+        if (rootAudio && false) {
             audio = new Pacman.Audio({'soundDisabled': soundDisabled});
 
             var extension = Modernizr.audio.ogg ? 'ogg' : 'mp3';
@@ -1082,6 +1092,8 @@ var PACMAN = (function () {
         }
 
         loaded();
+
+        log.innerHTML = 'loaded..';
     }
 
 
