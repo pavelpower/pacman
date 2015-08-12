@@ -843,7 +843,7 @@ var PACMAN = (function () {
     }
 
     function keyDown(e) {
-        if (e.keyCode === KEY.PLAY) {
+        if (e.keyCode === KEY.PLAY || e.keyCode === KEY.PAUSE) {
             startNewGame();
         } else if (e.keyCode === KEY.S) {
             audio.disableSound();
